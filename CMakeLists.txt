@@ -1,5 +1,6 @@
 # cmake needs this line
 cmake_minimum_required(VERSION 2.8)
+set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH};/usr/local/lib/cmake")
 set( CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}" ${CMAKE_MODULE_PATH} )
 
 # Define project name
