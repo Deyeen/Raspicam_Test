@@ -5,7 +5,7 @@
 #include <raspicam/raspicam.h>
 using namespace std;
 
-int main ( int argc,char **argv ) {
+int raspicam_test ( int argc,char **argv ) {
     raspicam::RaspiCam Camera; //Cmaera object
     //Open camera 
     cout<<"Opening Camera..."<<endl;

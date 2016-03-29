@@ -10,6 +10,7 @@ project(rpi_exposure)
 # to the absolute path to the directory containing OpenCVConfig.cmake file
 # via the command line or GUI
 find_package(OpenCV REQUIRED)
+find_package(aruco REQUIRED)
 find_package(raspicam REQUIRED)
 
 
@@ -28,12 +29,13 @@ if(CMAKE_VERSION VERSION_LESS "2.8.11")
 endif()
 
 # Declare the executable target built from your sources
-add_executable(rpi_exposure exposure_test.cpp)
+add_executable(rpi_exposure raspicam_cv_test.cpp) 
 
 # Link your application with OpenCV libraries
 target_link_libraries(rpi_exposure ${OpenCV_LIBS})
 target_link_libraries(rpi_exposure libaruco.so)
 target_link_libraries (rpi_exposure ${raspicam_LIBS})
+target_link_libraries (rpi_exposure ${raspicam_CV_LIBS})
 
 
  
