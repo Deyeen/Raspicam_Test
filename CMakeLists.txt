@@ -29,13 +29,17 @@ if(CMAKE_VERSION VERSION_LESS "2.8.11")
 endif()
 
 # Declare the executable target built from your sources
-add_executable(rpi_exposure raspicam_cv_test.cpp) 
+add_executable(raspicam_cv_test raspicam_cv_test.cpp) 
+add_executable(raspicam_test raspicam_test.cpp) 
 
 # Link your application with OpenCV libraries
-target_link_libraries(rpi_exposure ${OpenCV_LIBS})
-target_link_libraries(rpi_exposure libaruco.so)
-target_link_libraries (rpi_exposure ${raspicam_LIBS})
-target_link_libraries (rpi_exposure ${raspicam_CV_LIBS})
+target_link_libraries(raspicam_cv_test ${OpenCV_LIBS})
+target_link_libraries(raspicam_cv_test libaruco.so)
+target_link_libraries (raspicam_cv_test ${raspicam_LIBS})
+target_link_libraries (raspicam_cv_test ${raspicam_CV_LIBS})
+target_link_libraries(raspicam_test ${OpenCV_LIBS})
+target_link_libraries(raspicam_test libaruco.so)
+target_link_libraries (raspicam_test ${raspicam_LIBS}) 
 
 
  
